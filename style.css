@@ -1,0 +1,82 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+#main-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Graph Bereich */
+#cy {
+  flex-grow: 1;
+  background-color: #f9f9f9;
+}
+
+/* Sidebar Bereich */
+.sidebar {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ccc;
+  background: white;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.controls {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #eee;
+}
+
+.controls input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  box-sizing: border-box;
+}
+
+.controls input[type="number"] {
+  width: 60px;
+}
+
+#attributeBox {
+  flex-grow: 1;
+  border: 1px solid #eee;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+/* Mobile Optimierung */
+@media (max-width: 768px) {
+  #main-wrapper {
+    flex-direction: column; /* Stapelt Graph über Sidebar */
+  }
+
+  #cy {
+    height: 50vh; /* Graph nimmt nur halbe Höhe ein */
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 50vh;
+    border-left: none;
+    border-top: 1px solid #ccc;
+  }
+
+  .controls input {
+    font-size: 16px;
+  }
+}
